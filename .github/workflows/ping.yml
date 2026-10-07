@@ -1,0 +1,15 @@
+name: Wake Up HuggingFace
+
+on:
+  schedule:
+    # Tani waxay shaqaynaysaa 30-kii daqiiqaba mar, 24/7
+    - cron: '*/30 * * * *'
+  workflow_dispatch: # Tani waxay kuu ogolaanaysaa inaad gacanta ku tijaabiso
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Space
+        run: |
+          curl -I https://khaanhuradaaye-archive.hf.space
